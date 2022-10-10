@@ -1,6 +1,6 @@
 ---
 - name: This is a hello-world example
-  hosts: localhost
+  hosts: all
   tasks:
     - name: "Print hello world"
       debug:
