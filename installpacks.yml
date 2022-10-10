@@ -1,0 +1,10 @@
+-
+ name: "This play installs some packs"
+ hosts: all
+ tasks:
+  - name: "Install some packs"
+    yum:
+      name:
+        - 'curl'
+        - 'git'
+       state: installed
