@@ -1,0 +1,7 @@
+---
+- name: This is a hello-world example
+  hosts: localhost
+  tasks:
+    - name: "Print hello world"
+      debug:
+        msg: "Hello World\n"
