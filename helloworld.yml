@@ -4,4 +4,5 @@
   tasks:
     - name: "Print hello world"
       debug:
-        msg: "LOVE World! Thankyou Universe! I'm greateful for everything in my life! Love my life!!!\n"
+       # msg: "LOVE World! Thankyou Universe! I'm greateful for everything in my life! Love my life!!!\n"
+         msg: "Love my life, everthing I'm facing now is taking me to the next level of my life, happiness in abundance!\n"
