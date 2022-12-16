@@ -8,4 +8,4 @@
     
   - name: "This prints the stored variable"
     debug:
-       msg: uptime_value
+       var: uptime_value
