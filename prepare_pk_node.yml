@@ -1,0 +1,6 @@
+-
+ name: "This play prepares a node for pacemaker installation"
+ hosts: all
+ tasks:
+  - name: "This task registers the server to a subscription manager"
+    sub
