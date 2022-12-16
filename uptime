@@ -1,0 +1,11 @@
+-
+ name: "This play checks the uptime of the servers"
+ hosts: all
+ tasks:
+  - name: "Check uptime"
+    shell: "uptime"
+    register: uptime_value
+    
+  - name: "This prints the stored variable"
+    debug:
+       msg: uptime_value
