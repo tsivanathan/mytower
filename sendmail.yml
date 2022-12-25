@@ -1,16 +1,16 @@
 -
-name: "This play installs sendmail"
-hosts: all
-gather_facts: no
-tasks:
- - name: "This task installs sendmail"
-   dnf:
-    name: sendmail
-    state: present
-    
- - name: "This task enables the sendmail service"
-   service:
+ name: "This play installs sendmail"
+ hosts: all
+ gather_facts: no
+ tasks:
+  - name: "This task installs sendmail"
+    dnf:
      name: sendmail
-     state: started
-     enabled: yes
+     state: present
+    
+  - name: "This task enables the sendmail service"
+    service:
+      name: sendmail
+      state: started
+      enabled: yes
      
