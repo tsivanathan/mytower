@@ -1,0 +1,10 @@
+-
+ name: "This play copies the sendmail.sh script to all the servers"
+ hosts: all
+ gather_facts: no
+ tasks:
+  - name: "This task copies sendmail.sh script to all the servers"
+    copy:
+     src: sendmail.sh
+     dest: /usr/local/bin/cluster_email.sh
+    
