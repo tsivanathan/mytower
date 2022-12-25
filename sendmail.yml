@@ -11,4 +11,6 @@ tasks:
  - name: "This task enables the sendmail service"
    service:
      name: sendmail
+     state: started
+     enabled: yes
      
