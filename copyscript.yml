@@ -5,6 +5,9 @@
  tasks:
   - name: "This task copies sendmail.sh script to all the servers"
     copy:
-     src: sendmail.sh
+     src: cluster_email.sh
      dest: /usr/local/bin/cluster_email.sh
+     owner: root
+     group: root
+     mode: u+rwx,g-wx,o-rwx
     
