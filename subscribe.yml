@@ -1,0 +1,13 @@
+-
+ name: "This play subscribes the servers to redhat"
+ hosts: all
+ vars_files:
+   - mypass.yml
+ gather_facts: no
+ tasks:
+  - name: "Register as user"
+    community.general.redhat_subscription:
+     state: present
+     username: tsivanathan
+     password: "{{pwd}}"
+     auto_attach: true
