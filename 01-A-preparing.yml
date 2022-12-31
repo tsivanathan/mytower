@@ -1,0 +1,16 @@
+---
+ - name: "Deploying a redhat cluster"
+   hosts: all
+   become: yes
+   gather_facts: no
+   vars_files:
+    - variables.yml
+   tasks:
+    - name: "Create variables for vg names"
+      set_fact:
+       vgname: "{{name}}"
+    - name: "Display the name"
+      debug:
+       msg: "{{name}}"
+    
+     

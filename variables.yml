@@ -1,0 +1,16 @@
+---
+fence_disks:
+  - "/dev/mapper/mpatha"
+ha_nodes:
+ - pacemake1
+ - pacemake2
+ - pacemake3
+ha_prim_node:
+   "pacemake2"
+hacluster_name:
+  "Q9ASE_Cluster"
+instances:
+  - name: TORASEU011
+    user: qstgskm
+    vip: 192.168.1.185
+    netmask: 24
