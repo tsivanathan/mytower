@@ -1,0 +1,14 @@
+-
+ name: "This play authorizes the pcs host"
+ hosts: pacemake1
+ vars_files:
+   - mypass.yml
+ gather_facts: no
+ tasks:
+  - name: "This task authorizes the pacemaker"
+    command: pcs host auth pacemake1 pacemake2 pacemake3 -u hacluster -p "{{ha_password}}"
+    register: auth_stat
+
+  - name: "print the auth status"
+    debug:
+     msg: auth_stat
