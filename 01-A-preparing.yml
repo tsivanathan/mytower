@@ -8,7 +8,7 @@
    tasks:
     - name: "Create variables for vg names"
       set_fact:
-       vgname: "{{ name }}"
+       vgname: "{{ instances.name }}"
     - name: "Display the name"
       debug:
        msg: "{{ name }}"
