@@ -1,6 +1,6 @@
 -
  name: "This play authorizes the pcs host"
- hosts: pacemake1
+ hosts: pacemake1.rbc.local
  vars_files:
    - mypass.yml
  gather_facts: no
