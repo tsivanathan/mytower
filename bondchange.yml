@@ -1,0 +1,18 @@
+-
+ name: "This play updates the bonding options to mode 1"
+ hosts: all
+ gather_facts: no
+ tasks:
+   - name: "This task takes a backup and updates the bond file"
+     lineinfile:
+      path: /etc/sysconfig/network-scripts/ifcfg-bond0
+      regexp: '^BONDING_OPTS='
+      line: 'BONDING_OPTS="mode=1 miimon=100"'
+     register: bondvar
+
+   - name: "This task recycles the network service"
+     service:
+       name: network
+       state: restarted
+       args: bond0
+     when: bondvar is changed
