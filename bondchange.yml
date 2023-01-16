@@ -8,7 +8,7 @@
        src: /etc/sysconfig/network-scripts/ifcfg-bond0
        dest: /tmp/ifcfg-bond0.backup
        remote_src: yes
-      register: copy_stat
+     register: copy_stat
        
    - name: "This task updates the bond file"
      lineinfile:
