@@ -3,13 +3,20 @@
  hosts: all
  gather_facts: no
  tasks:
-   - name: "This task takes a backup and updates the bond file"
+   - name: "This task takes a backup of the bond file and places it under /tmp"
+     copy:
+       src: /etc/sysconfig/network-scripts/ifcfg-bond0
+       dest: /tmp/ifcfg-bond0.backup
+       remote_src: yes
+      register: copy_stat
+       
+   - name: "This task updates the bond file"
      lineinfile:
       path: /etc/sysconfig/network-scripts/ifcfg-bond0
       regexp: '^BONDING_OPTS='
       line: 'BONDING_OPTS="mode=1 miimon=100"'
-      backup: yes
      register: bondvar
+     when: copy_stat is changed
 
    - name: "This task recycles the network service"
      service:
